@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}The best articles{% endblock %}
+
+{% block content %}
+<div>
+    <ul>
+        {% for object in object_list %}
+            <li>
+                <a href="{% url 'blog:detail' object.id %}">
+                    <h3><b>{{ object.title }}</b></h3>
+                    {{ object.content }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
